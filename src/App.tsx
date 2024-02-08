@@ -3,6 +3,7 @@ import Title from "./pages/Title"
 import {Header} from "./pages/Header"
 import {Editor} from "./pages/Editor"
 import {MenuNotas} from "./pages/MenuNotas"
+import ImageCapa from "./pages/ImageCapa"
 
 export function App() {
 
@@ -17,6 +18,7 @@ export function App() {
          <Header/>
         </div>
         <div className=' grid mx-auto w-[75%]'>
+          <ImageCapa/>
           <Title/>
           <Editor/>
         </div>

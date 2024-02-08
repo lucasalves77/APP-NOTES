@@ -14,7 +14,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Folder className="text-zinc-200" size={18} />
           <p className="text-zinc-200 text-[0.9rem] ">My folders</p>
-          <CaretDown className="text-zinc-200" size={18} />
+          <CaretDown className="text-zinc-200" weight="fill" size={16} />
         </div>    
         <div className="flex items-center gap-2">
           <Tag className="text-zinc-200" size={18} />

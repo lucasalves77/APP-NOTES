@@ -18,7 +18,7 @@ const Title: React.FC = () => {
   };
 
   return (
-    <div className='w-full mt-20 '>
+    <div className='w-full mt-5'>
       <textarea 
         value={text} 
         ref={(textarea) => autoResize(textarea)} 
