@@ -18,17 +18,16 @@ const ToggleSwitch: React.FC = () => {
       />
       <label
         htmlFor="toggleSwitch"
-        className={`relative flex items-center w-10 h-4 bg-gray-300 rounded-full transition duration-300 ease-in-out ${
-          isChecked ? "bg-zinc-500" : ""
+        className={`cursor-pointer relative flex items-center w-10 h-4 bg-neutral-700 rounded-full transition duration-300 ease-in-out ${
+          isChecked ? "bg-gradient-to-l to-blue-500 from-sky-400" : ""
         }`}
       >
         <span
-          className={`absolute left-[2px] w-3 h-3 bg-zinc-700 rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${
-            isChecked ? "translate-x-6 bg-blue-400 " : ""
+          className={`absolute left-[2px] w-3 h-3 bg-zinc-200 rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${
+            isChecked ? "translate-x-6 " : ""
           }`}
         ></span>
       </label>
-     
     </div>
   );
 };
