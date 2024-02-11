@@ -12,3 +12,45 @@
 body{
   overflow: hidden;
 }
+
+#scrollBar{
+  overflow-y: hidden;
+  margin-bottom: 50px;
+  transition: overflow-y 0.3s ease;
+}
+
+#scrollBarContent{
+  overflow-y: auto;
+}
+
+#scrollBar:hover {
+  overflow-y: auto;
+}
+
+#scrollBarContent::-webkit-scrollbar,
+#scrollBar::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+#scrollBarContent::-webkit-scrollbar-track,
+#scrollBar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+#scrollBar::-webkit-scrollbar-thumb {
+  background: #262626;
+}
+
+#scrollBarContent::-webkit-scrollbar-thumb{
+  background: #404040;
+}
+
+/* Handle on hover */
+
+/*#scrollBar::-webkit-scrollbar-thumb:hover {
+  background: #404040;
+}
+
+*/

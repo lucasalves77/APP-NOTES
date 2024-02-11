@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Input } from "../components/ui/input";
 import { Image } from '@phosphor-icons/react';
 
-const ImageCapa: React.FC = () => {
+const ImageUploadButton: React.FC = () => {
   const [image, setImage] = useState<string | null>(null);
   const [showCoverButton, setShowCoverButton] = useState<boolean>(false);
-  const [divHeight, setDivHeight] = useState<string>('100px'); 
+  const [divHeight, setDivHeight] = useState<string>('100px'); // Estado para a altura da div principal
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files && e.target.files[0];
@@ -14,7 +14,7 @@ const ImageCapa: React.FC = () => {
       reader.onloadend = () => {
         const imageDataUrl = reader.result as string;
         setImage(imageDataUrl);
-        setDivHeight('260px'); 
+        setDivHeight('260px'); // Define a altura para 240px quando uma imagem é selecionada
       };
       reader.readAsDataURL(file);
     }
@@ -22,12 +22,12 @@ const ImageCapa: React.FC = () => {
 
   const handleRemoveImage = () => {
     setImage(null);
-    setDivHeight('100px'); 
-    setShowCoverButton(false); 
+    setDivHeight('100px'); // Define a altura de volta para 100px quando a imagem é removida
+    setShowCoverButton(false); // Esconde o botão "Add cover" quando a imagem é removida
   };
 
   return (
-    <div className={`mt-2 relative`} style={{ height: divHeight }}  
+    <div className={`mt-2 relative`} style={{ height: divHeight }}  // Utiliza a classe condicional para definir a altura
         onMouseEnter={() => setShowCoverButton(true)}
         onMouseLeave={() => setShowCoverButton(false)}
         >
@@ -44,7 +44,7 @@ const ImageCapa: React.FC = () => {
           </div>
         )}
         
-        {showCoverButton && !image && ( 
+        {showCoverButton && !image && ( // Adiciona esta verificação para mostrar o botão "Add cover" apenas se não houver imagem
           <div className='absolute bottom-0 mb-2'>
             {!image && (
             <label className='flex rounded py-1 px-2 hover:bg-neutral-700 items-center gap-1 cursor-pointer text-zinc-200 text-[12px]' htmlFor="cover"><Image className="text-zinc-200 cursor-pointer" size={18} />Add cover</label>
@@ -52,8 +52,8 @@ const ImageCapa: React.FC = () => {
             <Input id="cover" name="cover" className='mt-2 bg-neutral-700 hidden' type="file" accept="image/*" onChange={handleImageChange} />
           </div>
         )}
-    </div>
+      </div>
   );
 };
 
-export default ImageCapa;
+export default ImageUploadButton;

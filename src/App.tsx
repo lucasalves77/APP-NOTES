@@ -13,14 +13,14 @@ export function App() {
         <Navbar/>
         <MenuNotas/>
       </div>
-      <div className="bg-neutral-800 w-full">
-        <div>
+      <div className="bg-neutral-800 grid grid-rows-[50px_1fr] h-screen w-full">     
          <Header/>
-        </div>
-        <div className=' grid mx-auto w-[75%]'>
-          <ImageCapa/>
-          <Title/>
-          <Editor/>
+        <div id='scrollBarContent' className='flex justify-center overflow-auto h-full'>    
+          <div className='w-[90%] grid grid-cols-1 grid-rows-[auto_auto_1fr] '>
+            <ImageCapa/>
+            <Title/>
+            <Editor/>
+          </div>         
         </div>
       </div>
     </div>

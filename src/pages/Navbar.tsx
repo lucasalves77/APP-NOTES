@@ -1,6 +1,5 @@
 import { Bell, ClipboardText, Clock, Gear, Heart, Pen, SquaresFour, Trash } from "@phosphor-icons/react";
 import { useState } from 'react';
-import  ToggleSwitch  from "../components/ToggleSwitch";
 import {Folders} from '../components/Folders';
 
 type ButtonName = 'Bell' | 'ClipboardText' | 'Clock' | 'Heart' | 'Pen' | 'SquaresFour' | 'Trash';
@@ -14,14 +13,19 @@ export function Navbar(): JSX.Element {
   };
 
   return (
-    <div className="bg-neutral-900 p-4 flex flex-col relative border-r-[2px] border-r-neutral-800 h-screen ">
-      <div className="flex items-center gap-3">
-        <div className="w-[35px] h-[35px] rounded-full bg-neutral-800"></div>
-        <p className="text-zinc-200">Lucas Alves</p>
+    <div className="bg-neutral-900  grid grid-rows-[50px_260px_1fr] gap-[50px] border-r-[2px] border-r-neutral-800 h-screen">
+      <div className="flex p-4 items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-[35px] h-[35px] rounded-full bg-neutral-800"></div>
+          <p className="text-zinc-200">Lucas Alves</p>
+        </div>
+        <button>
+          <Gear className=" text-zinc-200" size={18} />
+        </button>
       </div>
-      <div>
-        <div className="mt-16 flex flex-col gap-[2px]">
-        <p className="mb-[10px] px-[14px] text-zinc-200">Quick links</p>
+
+      <div className="flex p-4 flex-col gap-[2px]">
+        <p className="mb-[10px] px-[14px] font-bold text-zinc-200">Quick links</p>
         <button className={`text-zinc-200 ${activeButton === 'ClipboardText' ? 'bg-gradient-to-l to-blue-500 from-sky-400 ' : ''} flex items-center gap-3 px-[12px] h-[30px] rounded-full text-[0.9rem]  hover:bg-neutral-800`}
            onClick={() => handleButtonClick('ClipboardText')}>
           <ClipboardText className="text-zinc-200" size={18} />
@@ -58,17 +62,8 @@ export function Navbar(): JSX.Element {
           Trash
         </button>
       </div>
-     
-      <Folders/>
-
-      </div>
-      <div className="absolute w-full left-0 p-4 bottom-0">
-        <div className="flex items-center w-full justify-between">
-          <button>
-          <Gear className=" text-zinc-200" size={20} />
-          </button>
-          <ToggleSwitch/>
-        </div>
+      <div className="overflow-y-auto pl-4 pr-1 pb-4">
+        <Folders/>
       </div>
     </div>
   )

@@ -9,7 +9,7 @@ import {Tasks} from "../components/buttonHeader/Tasks"
 
 export function Header() {
   return (
-    <div className="h-[50px] px-4	flex items-center justify-between">
+    <div className=" px-4	flex items-center justify-between">
       <div className="flex items-center gap-8">
         <div className="flex items-center gap-2">
           <Folder className="text-zinc-200" size={18} />

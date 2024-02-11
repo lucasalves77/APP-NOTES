@@ -18,7 +18,7 @@ const Title: React.FC = () => {
   };
 
   return (
-    <div className='w-full mt-5'>
+    <div className='w-full mt-10 px-[60px]'>
       <textarea 
         value={text} 
         ref={(textarea) => autoResize(textarea)} 
@@ -26,7 +26,7 @@ const Title: React.FC = () => {
         id="texto" 
         rows={1}
         placeholder="Titulo" 
-        className="outline-none text-zinc-200 bg-transparent resize-none text-[2.2rem] w-full font-bold"
+        className="outline-none overflow-hidden text-zinc-200 bg-transparent resize-none text-[2.2rem] w-full font-bold"
         maxLength={100} 
       />
     </div>
